@@ -1,0 +1,64 @@
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background-color: rgb(35, 128, 209);
+}
+
+nav {
+    height: 3rem;
+    display: flex;
+    margin: 0 110px 0 110px;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 22px;
+    padding: 15px; 
+    color: white;
+}
+
+#logo {
+    font-size: 40px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 100;
+    color: white;
+    text-decoration: none;
+}
+
+ul li {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 100;
+    font-size: 18px;
+    text-decoration: none;
+    list-style: none;
+    cursor: pointer;
+    position: relative;
+    display: inline;
+    margin-left: 2rem;
+}
+
+ul li:hover {
+    transition: 0.5s;
+    color: rgb(236, 211, 16);
+    text-decoration: underline;
+}
+
+#helpbutton {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 100;
+    font-size: 18px;
+    padding: 12px;
+    background-color: rgb(35, 128, 209);
+    color: white;
+    border: 1px solid white;
+}
+
+#helpbutton:hover {
+    transition: 0.5s;
+    background-color: rgb(35, 128, 209);
+    color: rgb(236, 211, 16);
+    border: 1px solid rgb(241, 217, 0);
+    cursor: pointer;
+}
+
