@@ -14,6 +14,7 @@ main {
     height: 320px;
     width: 250px;
     background-color: rgba(179, 178, 178, 0.183);
+    background-image: linear-gradient(to top, rgba(0, 221, 255, 0.102), white );
     text-align: center;
     margin: 15px;
     display: inline-block;
@@ -23,8 +24,45 @@ main {
     margin-left: 3rem;
 }
 
+
 @media screen and (max-width: 980px) {
     main {
         display: grid;
     }
 }
+
+.title {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgba(35, 128, 209, 0.802);
+    margin-bottom: 30px;
+}
+
+.legend {
+    margin-top: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15px;
+    font-weight: bold;
+    color: rgb(35, 51, 79);
+}
+
+.button {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 18px;
+    padding: 12px;
+    font-weight: bold;
+    background-color: transparent;
+    
+    color: rgba(35, 128, 209, 0.80);
+    border: 1px solid rgba(35, 128, 209, 0.80);
+}
+
+.button:hover {
+    transition: 0.5s;
+    color: #000;
+    text-decoration: underline;
+    border: 1px solid white;
+    cursor: pointer;
+}
+
