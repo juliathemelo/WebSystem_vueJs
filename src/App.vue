@@ -26,7 +26,8 @@ export default {
   name: 'App',
   data: () => ({
     routes: [
-      {name: 'Home', path: { path: '/home'}}
+      {name: 'Home', path: { path: '/home'}},
+      {name: 'Start', path: {path: '/'}}
     ]
   })
 }
