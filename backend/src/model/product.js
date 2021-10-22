@@ -27,6 +27,10 @@ const ProductSchema = new mongoose.Schema({
     preco: {
         type: Number,
         required: true
-    },
+    }, 
 
+}, {
+    versionKey: false
 })
+
+module.exports = mongoose.model('product', ProductSchema)
