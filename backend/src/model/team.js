@@ -1,6 +1,7 @@
 const mongoose = require("mongoose")
 
 const TeamSchema = new mongoose.Schema({
+
     _id: mongoose.Schema.Types.ObjectId,
 
     name: {
@@ -18,4 +19,8 @@ const TeamSchema = new mongoose.Schema({
         required: true
     }
     
+},{
+    versionKey: false
 })
+
+module.exports = mongoose.model('team', TeamSchema)
