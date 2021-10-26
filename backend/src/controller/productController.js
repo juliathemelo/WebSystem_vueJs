@@ -1,4 +1,5 @@
 const Product = require('../model/product')
+const Team = require('../model/team')
 const mongoose = require('mongoose')
 
 const createProduct = async (req, res) => {
