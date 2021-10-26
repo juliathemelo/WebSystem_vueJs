@@ -5,32 +5,32 @@
             <h1 id="title"> Cadastro Produto </h1>
             <h1 id="subtitle"> Preencha as informações corretamente do produto </h1>
         </div>
-        <v-form>
             <div class="field">
                 <label> Selecione o Time </label>
-                <select class="team-form" v-model="selected">
+                <select class="team-form" v-model="selectedTeam">
                     <option v-for="item in items" :value="item.val" :key="item.id">
-                    {{ item.val }}
+                    {{ item.name }}
                     </option>
                 </select>
             </div>
             <div class="field">
                 <label> Nome do produto</label>
-                <input type="text" name="name" id="name" required>
+                <input type="text" name="name" id="name" v-model="product.name" required>
             </div>
             <div class="field">
                 <label> Quantidade de produtos </label>
-                <input type="number" name="name" id="quantidade" required>
+                <input type="number" name="name" id="quantidade" v-model="product.quantidade" required>
             </div>
             <div class="field">
                 <label> Descrição do produto </label>
-                <input type="text" name="name" id="descricao" required>
+                <input type="text" name="name" id="descricao" v-model="product.descricao" required>
             </div>
             <div class="field">
                 <label> Preço do produto </label>
-                <input type="number" min="1" step="any" id="preco"/>
+                <input type="number" min="1" step="any" v-model="product.preco" id="preco"/>
             </div>
-        </v-form>
+            <button>
+            </button>
         <div>
             <img src="../assets/astrodab.png" class="dab" />
         </div>
@@ -41,16 +41,30 @@
 </template>
 
 <script>
+import Product from '../services/productService';
 
 export default {
   name: 'Product', 
+
   data: () => ({
-    selected: 'ihuuu',
-      items: {
-          1: {id: 1, val:'ihuuu'},
-          2: {id: 2, val: 'testando2'}
-      }
-  })
+    selectedTeam: '',
+    product: {
+        name: '',
+        quantidade: 0,
+        descricao: '',
+        preco: 0
+
+    },
+    items: []
+  }),
+  mounted(){
+      Product.get_all_product().then(res => {
+          console.log(res)
+      }),
+      Product.get_all_teams().then(res => {
+          this.items = res.data
+      })
+  }
 }
 </script>
 <style lang="scss">
