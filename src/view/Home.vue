@@ -1,10 +1,10 @@
 <template>
-  <main>
+  <main class="home">
     <div class="cards">
       <h1 class="title">Cadastrar</h1>
       <img src="../assets/eat well.png" class="icon" />
       <p class="legend"> cadastro de novos produtos</p>
-      <button class="button cadastro"> cadastrar </button>
+      <router-link to="/product"><button class="button cadastro">Cadastrar</button></router-link>
     </div>
     <div class="cards">
       <h1 class="title">Consultar</h1>
@@ -25,6 +25,11 @@
 
 export default {
   name: 'Home',
+  data: () => ({
+    routes: [
+      {name: 'Product', path: { path: '/product'}}
+    ]
+  })
 }
 </script>
 <style lang="scss">

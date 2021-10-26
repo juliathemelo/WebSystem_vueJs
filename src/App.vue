@@ -27,7 +27,8 @@ export default {
   data: () => ({
     routes: [
       {name: 'Home', path: { path: '/home'}},
-      {name: 'Start', path: {path: '/'}}
+      {name: 'Start', path: {path: '/'}},
+      {name: 'Product', path: {path: '/product'}}
     ]
   })
 }
