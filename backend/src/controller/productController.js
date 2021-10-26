@@ -2,6 +2,16 @@ const Product = require('../model/product')
 const Team = require('../model/team')
 const mongoose = require('mongoose')
 
+const getAllProduct = async (req, res) => {
+    const allProducts = await Product.find()
+
+    if (allProducts.length == 0){
+        res.status(204).send({ message: "No Produc Found"})
+    }
+
+    res.status(200).send(allProducts)
+}
+
 const createProduct = async (req, res) => {
     const product = new Product ({
         _id: new mongoose.Types.ObjectId(),
@@ -27,5 +37,6 @@ const createProduct = async (req, res) => {
 }
 
 module.exports = {
-    createProduct
+    createProduct,
+    getAllProduct
 }

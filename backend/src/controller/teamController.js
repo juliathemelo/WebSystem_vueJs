@@ -1,6 +1,17 @@
 const Team = require('../model/team')
 const mongoose = require('mongoose')
 
+
+const getAllTeams = async (req, res) => {
+    const allTeams = await Team.find()
+
+    if (allTeams.length == 0){
+        res.status(204).send({ message: "No Produc Found"})
+    }
+
+    res.status(200).send(allTeams)
+}
+
 const createTeam = async (req, res) => {
     const team = new Team ({
         _id: new mongoose.Types.ObjectId(),
@@ -24,5 +35,6 @@ const createTeam = async (req, res) => {
 }
 
 module.exports = {
-    createTeam
+    createTeam,
+    getAllTeams
 }
