@@ -7,5 +7,10 @@ export default {
 
     get_all_teams: () => {
         return http.get('team')
+    },
+
+    create_product: (product) => {
+        return http.post('product', product)
     }
+
 }

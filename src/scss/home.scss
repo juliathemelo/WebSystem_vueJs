@@ -11,6 +11,7 @@ main {
 }
 
 .cards {
+    padding: 13px;
     height: 320px;
     width: 250px;
     background-color: rgba(179, 178, 178, 0.183);
@@ -37,6 +38,7 @@ main {
     font-weight: bold;
     color: rgba(35, 128, 209, 0.802);
     margin-bottom: 30px;
+    margin-top: 15px;
 }
 
 .legend {

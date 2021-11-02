@@ -3,7 +3,7 @@
   <header>
     <nav>
       <div>
-        <a href="#" id="logo"> Logo </a>
+        <router-link to="/"> <a id="logo"> Logo </a> </router-link>
       </div>
       <ul>
         <li>test</li>

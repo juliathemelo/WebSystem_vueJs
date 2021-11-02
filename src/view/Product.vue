@@ -1,14 +1,14 @@
 <template>
   <main class="product-form">
-    <form>
+    <form  @submit.prevent="save">
         <div class="title">
             <h1 id="title"> Cadastro Produto </h1>
             <h1 id="subtitle"> Preencha as informações corretamente do produto </h1>
         </div>
-            <div class="field">
+            <div class="field">   
                 <label> Selecione o Time </label>
-                <select class="team-form" v-model="selectedTeam">
-                    <option v-for="item in items" :value="item.val" :key="item.id">
+                <select class="team-form" v-model="product.team">
+                    <option v-for="item in items" :value="item._id" :key="item._id">
                     {{ item.name }}
                     </option>
                 </select>
@@ -29,7 +29,8 @@
                 <label> Preço do produto </label>
                 <input type="number" min="1" step="any" v-model="product.preco" id="preco"/>
             </div>
-            <button>
+            <button id="save_product" @submit.prevent="save">
+                Save
             </button>
         <div>
             <img src="../assets/astrodab.png" class="dab" />
@@ -47,8 +48,8 @@ export default {
   name: 'Product', 
 
   data: () => ({
-    selectedTeam: '',
     product: {
+        team: '',
         name: '',
         quantidade: 0,
         descricao: '',
@@ -57,13 +58,24 @@ export default {
     },
     items: []
   }),
-  mounted(){
+  mounted () {
       Product.get_all_product().then(res => {
           console.log(res)
       }),
       Product.get_all_teams().then(res => {
           this.items = res.data
       })
+  },
+  methods: {
+      save () {
+          Product.create_product(this.product).then(res => {
+              alert("Salvo Com Sucesso")
+              console.log(res)
+          }).catch(err => {
+              alert(err)
+          }) 
+      }
+
   }
 }
 </script>
