@@ -4,6 +4,7 @@ import VueRouter from 'vue-router'
 import Home from '../view/Home'
 import Start from '../view/Start'
 import Product from '../view/Product'
+import View from '../view/View';
 
 Vue.use(VueRouter)
 
@@ -22,6 +23,11 @@ const routes = [
         path: '/product',
         name: 'product',
         component: Product
+    },
+    {
+        path: '/view',
+        name: 'view',
+        component: View
     }
 ]
 

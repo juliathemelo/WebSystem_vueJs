@@ -1,0 +1,30 @@
+.components{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.title_product{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 120px;
+
+}
+
+.cards_product{
+    padding: 13px;
+    height: 220px;
+    width: 250px;
+    background-color: rgba(179, 178, 178, 0.183);
+    background-image: linear-gradient(to top, rgba(0, 221, 255, 0.102), white );
+    text-align: center;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: row;
+    border: 2px solid rgba(35, 128, 209, 0.537);
+    box-shadow: 0px 5px 25px rgba(132, 129, 129, 0.251);
+    border-radius: 8px;
+    margin-left: 3rem;
+}
