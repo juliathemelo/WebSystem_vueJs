@@ -6,10 +6,23 @@ const getAllTeams = async (req, res) => {
     const allTeams = await Team.find()
 
     if (allTeams.length == 0){
-        res.status(204).send({ message: "No Produc Found"})
+        res.status(204).send({ message: "No Product Found"})
     }
 
     res.status(200).send(allTeams)
+}
+
+const getById = async (req, res) => {
+    const teamId = req.params
+
+    const searchTeams = await Team.findOne(_id = teamId)
+
+
+    if (searchTeams.length == 0){
+        res.status(204).send({ message: "No Product Found"})
+    }
+
+    res.status(200).send(searchTeams)
 }
 
 const createTeam = async (req, res) => {
@@ -36,5 +49,6 @@ const createTeam = async (req, res) => {
 
 module.exports = {
     createTeam,
-    getAllTeams
+    getAllTeams,
+    getById
 }
